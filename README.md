@@ -285,3 +285,17 @@ src/main/java/com/shipping/estimator/
 3. **Transport boundary `100km` uses Truck** (not MiniVan) — `distance < 100` uses MiniVan; `distance >= 100` uses Truck.
 4. **H2 is in-memory** — all data resets on restart. Ready for PostgreSQL with an env variable change.
 5. **No authentication** — APIs are public for evaluation purposes.
+
+---
+## Contact
+
+<div align="center">
+
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:khchakri@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hemanth-chakravarthy)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hemanth-chakravarthy-kancharla-a27b87357)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](https://hemanth-chakravarthy.netlify.app/)
+
+</div>
+
+---
