@@ -29,21 +29,26 @@ public class Product {
     private Seller seller;
 
     @Column(nullable = false)
+    @jakarta.validation.constraints.NotBlank(message = "Product name is required")
     private String name;
 
     @Column(name = "weight_kg", nullable = false)
-    @Positive
+    @jakarta.validation.constraints.Positive(message = "Weight must be positive")
     private double weightKg;
 
     @Column(name = "length_cm")
+    @jakarta.validation.constraints.Positive(message = "Length must be positive")
     private double lengthCm;
 
     @Column(name = "width_cm")
+    @jakarta.validation.constraints.Positive(message = "Width must be positive")
     private double widthCm;
 
     @Column(name = "height_cm")
+    @jakarta.validation.constraints.Positive(message = "Height must be positive")
     private double heightCm;
 
+    @jakarta.validation.constraints.PositiveOrZero(message = "Price cannot be negative")
     private double price;
 
     @CreationTimestamp

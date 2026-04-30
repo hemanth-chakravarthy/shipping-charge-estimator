@@ -11,4 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ShippingChargeResponse {
     private double shippingCharge;
+    private double baseCharge;
+    private double fuelSurcharge;
+    private double handlingFee;
+    private double distanceKm;
+    private double productSubtotal;
+    private double grandTotal;
 }
