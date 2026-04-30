@@ -49,6 +49,7 @@ public class SecurityConfig {
         config.setAllowCredentials(true);
         config.addAllowedOriginPattern("http://localhost:*");
         config.addAllowedOriginPattern("https://*.netlify.app");
+        config.addAllowedOrigin("https://shipping-charge-estimator.netlify.app");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         source.registerCorsConfiguration("/**", config);
