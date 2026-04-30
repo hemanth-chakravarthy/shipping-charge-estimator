@@ -4,7 +4,7 @@ import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, CartesianG
 import useStore from './store';
 import './App.css';
 
-const API_BASE = 'http://localhost:8082/api';
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8082/api';
 
 function App() {
   const { 
