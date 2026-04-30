@@ -41,35 +41,17 @@ public class DataController {
 
     @GetMapping
     @Operation(summary = "List all seeded sample data", description = "Returns all pre-loaded sellers, customers, warehouses, and products with their IDs. Use these IDs to test the shipping APIs.")
-    public ResponseEntity<Map<String, Object>> getAllData() {
-        List<Seller> sellers = sellerRepository.findAll();
-        List<Customer> customers = customerRepository.findAll();
-        List<Warehouse> warehouses = warehouseRepository.findAll();
-        List<Product> products = productRepository.findAll();
-
-        Map<String, Object> result = new HashMap<>();
-        result.put("sellers", sellers.stream().map(s -> Map.of(
-                "id", s.getId(),
-                "name", s.getName(),
-                "latitude", s.getLatitude(),
-                "longitude", s.getLongitude())).toList());
-        result.put("customers", customers.stream().map(c -> Map.of(
-                "id", c.getId(),
-                "name", c.getName(),
-                "phoneNumber", c.getPhoneNumber(),
-                "latitude", c.getLatitude(),
-                "longitude", c.getLongitude())).toList());
-        result.put("warehouses", warehouses.stream().map(w -> Map.of(
-                "id", w.getId(),
-                "name", w.getName(),
-                "latitude", w.getLatitude(),
-                "longitude", w.getLongitude())).toList());
-        result.put("products", products.stream().map(p -> Map.of(
-                "id", p.getId(),
-                "name", p.getName(),
-                "sellerId", p.getSeller().getId(),
-                "weightKg", p.getWeightKg())).toList());
-
-        return ResponseEntity.ok(result);
+    public ResponseEntity<com.shipping.estimator.dto.MasterDataResponse> getAllData() {
+        return ResponseEntity.ok(com.shipping.estimator.dto.MasterDataResponse.builder()
+                .sellers(sellerRepository.findAll().stream().map(s -> com.shipping.estimator.dto.MasterDataResponse.SellerDTO.builder()
+                        .id(s.getId()).name(s.getName()).latitude(s.getLatitude()).longitude(s.getLongitude()).build()).toList())
+                .customers(customerRepository.findAll().stream().map(c -> com.shipping.estimator.dto.MasterDataResponse.CustomerDTO.builder()
+                        .id(c.getId()).name(c.getName()).phoneNumber(c.getPhoneNumber()).latitude(c.getLatitude()).longitude(c.getLongitude()).build()).toList())
+                .warehouses(warehouseRepository.findAll().stream().map(w -> com.shipping.estimator.dto.MasterDataResponse.WarehouseDTO.builder()
+                        .id(w.getId()).name(w.getName()).latitude(w.getLatitude()).longitude(w.getLongitude()).build()).toList())
+                .products(productRepository.findAll().stream().map(p -> com.shipping.estimator.dto.MasterDataResponse.ProductDTO.builder()
+                        .id(p.getId()).name(p.getName()).sellerId(p.getSeller().getId()).weightKg(p.getWeightKg())
+                        .lengthCm(p.getLengthCm()).widthCm(p.getWidthCm()).heightCm(p.getHeightCm()).price(p.getPrice()).build()).toList())
+                .build());
     }
 }
