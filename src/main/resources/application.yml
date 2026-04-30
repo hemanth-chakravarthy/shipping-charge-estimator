@@ -6,10 +6,10 @@ spring:
     favicon:
       enabled: false
   datasource:
-    url: jdbc:postgresql://localhost:5432/shippingdb
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/shippingdb}
     driver-class-name: org.postgresql.Driver
-    username: admin
-    password: secret
+    username: ${SPRING_DATASOURCE_USERNAME:admin}
+    password: ${SPRING_DATASOURCE_PASSWORD:secret}
   jpa:
     hibernate:
       ddl-auto: update
@@ -22,7 +22,7 @@ spring:
     type: simple
 
 server:
-  port: 8082
+  port: ${PORT:8082}
 
 springdoc:
   swagger-ui:
