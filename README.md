@@ -1,5 +1,7 @@
 # Enterprise Logistics Hub (V3.5)
 
+**Live Deployment**: [https://shipping-charge-estimator.netlify.app/](https://shipping-charge-estimator.netlify.app/)
+
 A production-ready **Spring Boot 3.2** & **React (Vite)** full-stack application for estimating B2B shipping charges. Originally a simple estimator, this project has evolved into a comprehensive logistics engine featuring dynamic volumetric weight calculations, multi-item bulk shipping, a minimalist "Noir" UI, and PDF invoicing.
 
 ---
