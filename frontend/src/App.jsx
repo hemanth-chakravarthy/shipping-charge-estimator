@@ -162,7 +162,7 @@ function App() {
                 min="1" 
                 value={form.quantity} 
                 onChange={(e) => setForm({ quantity: parseInt(e.target.value) })}
-                style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', background: '#f9f9f9' }}
+                style={{ width: '100%', padding: '0.8rem', border: '1px solid #000000ff', background: '#000000' }}
               />
             </div>
             <button className="btn" onClick={addToCart} style={{ flex: 1, marginBottom: '1.5rem', background: '#000', color: '#fff' }}>
